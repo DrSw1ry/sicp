@@ -1,0 +1,11 @@
+#lang racket
+(define (sqrt-iter guess x)
+(new-if (good-enough? guess x)
+guess
+(sqrt-iter (improve guess x)
+x)))
+
+
+
+;программа будет отсылать сама к себе, если будет использоваться
+;аппликативный порядок вычислений. в итоге выйдет рекурсия и ничего не получится
